@@ -4,9 +4,15 @@ python-soc-log-analyzer
 Main application entry point.
 """
 
+from pathlib import Path
+
 from parser import load_log_file
 from detector import detect_failed_logins
 from report import generate_summary
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+LOG_FILE = BASE_DIR / "sample_logs" / "authentication_logs.csv"
 
 
 def main():
@@ -14,9 +20,7 @@ def main():
     Run the SOC Log Analyzer.
     """
 
-    file_path = "../sample_logs/authentication_logs.csv"
-
-    events = load_log_file(file_path)
+    events = load_log_file(LOG_FILE)
 
     failed_logins = detect_failed_logins(events)
 
