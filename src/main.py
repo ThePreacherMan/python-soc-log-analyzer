@@ -6,8 +6,8 @@ Main application entry point.
 
 from pathlib import Path
 
+from detector import detect_brute_force, detect_failed_logins
 from parser import load_log_file
-from detector import detect_failed_logins
 from report import generate_summary
 
 
@@ -23,10 +23,11 @@ def main():
     events = load_log_file(LOG_FILE)
 
     failed_logins = detect_failed_logins(events)
+    alerts = detect_brute_force(events)
 
     total_events = len(events)
 
-    generate_summary(total_events, failed_logins)
+    generate_summary(total_events, failed_logins, alerts)
 
 
 if __name__ == "__main__":
