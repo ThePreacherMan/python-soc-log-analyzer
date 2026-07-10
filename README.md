@@ -230,21 +230,19 @@ All tests are executed automatically using **GitHub Actions** on every push to t
 
 ## Security Summary
 
-> Add terminal-output.png here.
+![Security Summary](screenshots/terminal-output.png)
 
 ---
 
 ## GitHub Actions
 
-> Add github-actions.png here.
+![GitHub Actions](screenshots/github-actions.png)
 
 ---
 
 ## Project Structure
 
-> Add repository-structure.png here.
-
----
+![Project Structure](screenshots/project-structure.png)
 
 # 🛣️ Roadmap
 
